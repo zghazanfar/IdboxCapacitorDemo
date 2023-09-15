@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Idbox Demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Idbox Demo
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<div>
+  <ion-img style="width: 50px; height: 45px; margin-left: 42%;margin-top: 10px;"
+  (click)="takePicture()"
+  src="../../assets/icon/camera.png"
+  alt="take picture"
+></ion-img>
+</div>
+  <div id="container">
+   <h6>RequestID: </h6>
+   <span>{{this.requestId}}</span>
+    <ion-list>
+      <h6>Choose bank flow</h6>
+      <ion-item >
+        <ion-select 
+              placeholder="Select function"
+      (ionChange)="selectFlow($event)">
+      <ion-select-option *ngFor="let item of BanksFlow" [value]="item" >{{ item.label }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <h6>Select method to execute</h6>
+      <ion-item >
+        <ion-select 
+        [(ngModel)]="selection"
+      placeholder="Select function"
+      (ionChange)="selectFunction($event)">
+      <ion-select-option *ngFor="let item of pickeritems" [value]="item">{{ item.label }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button (click)="configureVideoSignalR()" >
+        StartSignalR
+      </ion-button>
+      <label style="margin-top:50%;display: flex; font-size: 12px;">BuildNO: 1.0.5</label>
+    </ion-list>
+  </div>
+</ion-content>

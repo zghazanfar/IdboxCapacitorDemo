@@ -1,0 +1,8 @@
+{
+    "BatchSource": "TMEDESign",
+    "MSISDN": "2313131313",
+    "FirstName": "MMARIOS",
+    "LastName": "FFILIPPIDIS",
+    "IDNumber": "ΑΖ000000",
+    "RedirectAfterThankYouPage": "https://www.google.com"
+}
